@@ -689,13 +689,14 @@ mach_port_t get_kernel_memory_rw() {
 }
 
 
+extern int unjail(void);
 void go() {
   mach_port_t tfp0 = get_kernel_memory_rw();
   printf("tfp0: %x\n", tfp0);
   
   if (probably_have_correct_symbols()) {
     printf("have symbols for this device, testing the kernel debugger...\n");
-    test_kdbg();
+    unjail();//test_kdbg();
   }
   return;
 }

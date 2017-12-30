@@ -22,6 +22,10 @@
 		B0EF11141FCC6F9C00C1D14E /* kcall.c in Sources */ = {isa = PBXBuildFile; fileRef = B0EF11121FCC6F9C00C1D14E /* kcall.c */; };
 		B0EF11171FCC784B00C1D14E /* symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = B0EF11151FCC784B00C1D14E /* symbols.c */; };
 		B0F5AA3F1FDE87E90073FD88 /* early_kalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = B0F5AA3D1FDE87E80073FD88 /* early_kalloc.c */; };
+		B35510581FF594640040F27C /* unjail.m in Sources */ = {isa = PBXBuildFile; fileRef = B35510571FF594630040F27C /* unjail.m */; };
+		B38E33231FF68508005E5E26 /* bootstrap.dmg in Resources */ = {isa = PBXBuildFile; fileRef = B38E33221FF68508005E5E26 /* bootstrap.dmg */; };
+		B3BAF9141FF67CB400C3790B /* patchfinder64.c in Sources */ = {isa = PBXBuildFile; fileRef = B3BAF9121FF67CB400C3790B /* patchfinder64.c */; };
+		B3C7C5E91FF70DC900BD0FB9 /* libjb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C7C5E81FF70DC900BD0FB9 /* libjb.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,13 @@
 		B0EF11161FCC784B00C1D14E /* symbols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = symbols.h; sourceTree = "<group>"; };
 		B0F5AA3D1FDE87E80073FD88 /* early_kalloc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = early_kalloc.c; sourceTree = "<group>"; };
 		B0F5AA3E1FDE87E80073FD88 /* early_kalloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = early_kalloc.h; sourceTree = "<group>"; };
+		B35510561FF594630040F27C /* unjail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unjail.h; sourceTree = "<group>"; };
+		B35510571FF594630040F27C /* unjail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unjail.m; sourceTree = "<group>"; };
+		B38E33221FF68508005E5E26 /* bootstrap.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = bootstrap.dmg; sourceTree = "<group>"; };
+		B3BAF9121FF67CB400C3790B /* patchfinder64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = patchfinder64.c; sourceTree = "<group>"; };
+		B3BAF9131FF67CB400C3790B /* patchfinder64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchfinder64.h; sourceTree = "<group>"; };
+		B3C7C5E71FF70CC100BD0FB9 /* libjb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libjb.h; sourceTree = "<group>"; };
+		B3C7C5E81FF70DC900BD0FB9 /* libjb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjb.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C7C5E91FF70DC900BD0FB9 /* libjb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,13 @@
 				B07A024A1FB09B6F0018ACE5 /* Info.plist */,
 				B07A024B1FB09B6F0018ACE5 /* main.m */,
 				B07A02521FB09C3D0018ACE5 /* async_wake.c */,
+				B35510561FF594630040F27C /* unjail.h */,
+				B35510571FF594630040F27C /* unjail.m */,
+				B3C7C5E71FF70CC100BD0FB9 /* libjb.h */,
+				B3C7C5E81FF70DC900BD0FB9 /* libjb.a */,
+				B3BAF9121FF67CB400C3790B /* patchfinder64.c */,
+				B3BAF9131FF67CB400C3790B /* patchfinder64.h */,
+				B38E33221FF68508005E5E26 /* bootstrap.dmg */,
 				B07A02531FB09C3D0018ACE5 /* async_wake.h */,
 				B003EB331FC583CA00C58441 /* kmem.c */,
 				B003EB341FC583CA00C58441 /* kmem.h */,
@@ -174,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38E33231FF68508005E5E26 /* bootstrap.dmg in Resources */,
 				B0D79D621FDED41000B4F233 /* README in Resources */,
 				B07A02491FB09B6F0018ACE5 /* LaunchScreen.storyboard in Resources */,
 				B07A02461FB09B6F0018ACE5 /* Assets.xcassets in Resources */,
@@ -197,7 +217,9 @@
 				B07A02541FB09C3D0018ACE5 /* async_wake.c in Sources */,
 				B07A023E1FB09B6F0018ACE5 /* AppDelegate.m in Sources */,
 				B003EB3B1FC58F4900C58441 /* kdbg.c in Sources */,
+				B3BAF9141FF67CB400C3790B /* patchfinder64.c in Sources */,
 				B0EF11141FCC6F9C00C1D14E /* kcall.c in Sources */,
+				B35510581FF594640040F27C /* unjail.m in Sources */,
 				B0F5AA3F1FDE87E90073FD88 /* early_kalloc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +278,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -311,6 +334,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -337,6 +361,10 @@
 				INFOPLIST_FILE = async_wake_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/async_wake_ios",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
@@ -356,6 +384,10 @@
 				INFOPLIST_FILE = async_wake_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/async_wake_ios",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
