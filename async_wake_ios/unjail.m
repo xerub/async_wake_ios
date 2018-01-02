@@ -249,6 +249,18 @@ unjail(void)
     FILE *f = fopen("/tmp/k", "wt");
     fprintf(f, "0x%llx 0x%llx\n0x%llx 0x%llx\n", kernel_base, kaslr_slide, trust_chain, amficache);
     fclose(f);
+    /* this is not decoupled enough from exploit!
+     * for a different approach, check these out:
+     * https://github.com/Siguza/hsp4 (kernel)
+     * https://siguza.github.io/v0rtex/ (userland)
+     */
+    const int slot = 4;
+    unsigned offsetof_special = 2 * sizeof(long); // host::special
+    extern uint64_t the_realhost;
+    extern uint64_t the_port_kaddr;
+    if (the_realhost && the_port_kaddr) {
+        kwrite_uint64(the_realhost + offsetof_special + slot * sizeof(long), the_port_kaddr);
+    }
 #endif
 
   done:

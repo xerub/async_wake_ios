@@ -8,6 +8,8 @@
 #include "find_port.h"
 #include "symbols.h"
 
+uint64_t the_realhost;
+
 uint64_t cached_task_self_addr = 0;
 uint64_t task_self_addr() {
   if (cached_task_self_addr == 0) {
@@ -29,6 +31,7 @@ uint64_t current_thread() {
 uint64_t find_kernel_base() {
   uint64_t hostport_addr = find_port_address(mach_host_self(), MACH_MSG_TYPE_COPY_SEND);
   uint64_t realhost = rk64(hostport_addr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+  the_realhost = realhost;
   
   uint64_t base = realhost & ~0xfffULL;
   // walk down to find the magic:

